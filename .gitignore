@@ -1,0 +1,35 @@
+# Environments
+venv/
+env/
+.venv/
+
+# Secrets and Configuration
+.env
+.env.*
+*.secret
+
+# Python Cache and Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing and Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Logs and Databases
+*.log
+*.sqlite3
