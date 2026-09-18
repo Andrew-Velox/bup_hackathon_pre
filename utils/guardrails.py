@@ -49,9 +49,17 @@ def parse_time_window(text: str) -> List[int]:
     for word, num in word_to_num.items():
         t = re.sub(rf"\b{word}\b", str(num), t)
 
-    # Patterns for 12-hour or 24-hour intervals
-    # E.g. 'from 1 until 3', '1-3 pm', '13:00 to 15:00', 'between 6 pm and 9 pm'
-    match = re.search(r'(?:from|between|during(?: the)?)?\s*(\d{1,2})(?::00)?\s*(am|pm)?\s*(?:to|-|until|and)\s*(\d{1,2})(?::00)?\s*(am|pm)?', t)
+    # 1. Pattern for 24-hour military/digital format first: 13:00 to 15:00, 02:00 and 06:00
+    match_24 = re.search(r'(\d{1,2}):(?:00|[0-5]\d)\s*(?:to|-|until|and)\s*(\d{1,2}):(?:00|[0-5]\d)', t)
+    if match_24:
+        start_24 = int(match_24.group(1))
+        end_24 = int(match_24.group(2))
+        if 0 <= start_24 <= 23 and 0 <= end_24 <= 24 and start_24 < end_24:
+            return list(range(start_24, end_24))
+
+    # 2. Patterns for 12-hour intervals with AM/PM or casual numbers
+    # E.g. 'from 1 until 3 pm', '1-3 pm', 'between 6 pm and 9 pm'
+    match = re.search(r'(?:from|between|during(?: the)?)?\s*(\d{1,2})\s*(am|pm)?\s*(?:to|-|until|and)\s*(\d{1,2})\s*(am|pm)?', t)
     if match:
         h1 = int(match.group(1))
         m1 = match.group(2)
@@ -81,14 +89,6 @@ def parse_time_window(text: str) -> List[int]:
         start_24 = to_24(h1, m1)
         end_24 = to_24(h2, m2)
 
-        if 0 <= start_24 <= 23 and 0 <= end_24 <= 24 and start_24 < end_24:
-            return list(range(start_24, end_24))
-
-    # Pattern for 24-hour military format: 13:00 to 15:00
-    match_24 = re.search(r'(\d{1,2}):00\s*(?:to|-|until|and)\s*(\d{1,2}):00', t)
-    if match_24:
-        start_24 = int(match_24.group(1))
-        end_24 = int(match_24.group(2))
         if 0 <= start_24 <= 23 and 0 <= end_24 <= 24 and start_24 < end_24:
             return list(range(start_24, end_24))
 

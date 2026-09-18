@@ -1,0 +1,40 @@
+{
+  "scenario_id": "BUP-CAMPUS-BASELINE-01",
+  "operator_notes": [
+    "Optimize for minimum electricity cost under current peak and off-peak tariffs.",
+    "Campus maintenance staff meeting scheduled for 10:00 AM."
+  ],
+  "hours": [
+    {"hour": 0, "demand_kwh": 140.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 1, "demand_kwh": 130.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 2, "demand_kwh": 120.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 3, "demand_kwh": 115.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 4, "demand_kwh": 120.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 5, "demand_kwh": 150.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5},
+    {"hour": 6, "demand_kwh": 210.0, "solar_kwh": 25.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 7, "demand_kwh": 310.0, "solar_kwh": 90.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 8, "demand_kwh": 420.0, "solar_kwh": 180.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 9, "demand_kwh": 480.0, "solar_kwh": 270.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 10, "demand_kwh": 510.0, "solar_kwh": 340.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 11, "demand_kwh": 530.0, "solar_kwh": 380.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 12, "demand_kwh": 520.0, "solar_kwh": 390.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 13, "demand_kwh": 500.0, "solar_kwh": 370.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 14, "demand_kwh": 470.0, "solar_kwh": 310.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 15, "demand_kwh": 430.0, "solar_kwh": 220.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 16, "demand_kwh": 380.0, "solar_kwh": 120.0, "tariff_bdt_per_kwh": 8.5},
+    {"hour": 17, "demand_kwh": 410.0, "solar_kwh": 35.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 18, "demand_kwh": 490.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 19, "demand_kwh": 540.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 20, "demand_kwh": 510.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 21, "demand_kwh": 460.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 22, "demand_kwh": 350.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 14.5},
+    {"hour": 23, "demand_kwh": 220.0, "solar_kwh": 0.0, "tariff_bdt_per_kwh": 6.5}
+  ],
+  "battery": {
+    "capacity_kwh": 600.0,
+    "initial_energy_kwh": 200.0,
+    "minimum_energy_kwh": 50.0,
+    "max_charge_kwh_per_hour": 120.0,
+    "max_discharge_kwh_per_hour": 120.0
+  }
+}
