@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 pydantic
+google-genai
 groq
 pulp
 python-dotenv
