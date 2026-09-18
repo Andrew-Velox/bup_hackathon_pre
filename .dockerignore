@@ -11,7 +11,8 @@ __pycache__
 .coverage
 htmlcov
 .env
-.env.*
+.env.local
+.env.production
 *.secret
 *.log
 problem_statement.txt
